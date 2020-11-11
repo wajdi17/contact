@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand font-weight-bold">Navbar</a>
+  <form class="form-inline">
+    <a class="nav-link" routerLink="/add">
+      <button class="btn btn-outline-dark" type="button">ADD</button></a
+    >
+  </form>
+</nav>
+
+<div class="container">
+  <div class="row row-cols-3">
+    <app-card
+      *ngFor="let contact of list"
+      [firstName]="contact.firstname"
+      [lastName]="contact.lastname"
+      [phone]="contact.phone"
+      [id]="contact._id"
+    ></app-card>
+  </div>
+</div>
