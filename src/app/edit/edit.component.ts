@@ -21,6 +21,7 @@ export class EditComponent implements OnInit {
  
   }
   contact : any
+  profilePic : any
   constructor(private _ActivatedRoute:ActivatedRoute,private _editService:ContactService) { }
 
   ngOnInit(): void {
@@ -31,6 +32,12 @@ export class EditComponent implements OnInit {
       this.contact = contact
     })
   }
+  selectImage(event){
+    if(event.target.files.length>0){
+      const file = event.target.files[0];
+      this.profilePic = file
+    }
+  }
   onSubmit(form : NgForm){
     this.editContact.firstName =form.value.firstname
   this.editContact.lastName =form.value.lastname
@@ -38,10 +45,17 @@ export class EditComponent implements OnInit {
   this.editContact.phone = form.value.phone 
   this.editContact.gender= form.value.gender
 
-  
   this._editService.edit(this.id,this.editContact).subscribe(data =>console.log(data));
+
+  //PUT profile pic
+  const formData = new FormData()
+  formData.append('file',this.profilePic)
+  this._editService.addImage(formData).subscribe()
 
 
   }
+  
+  
+
 
 }

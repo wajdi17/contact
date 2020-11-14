@@ -13,6 +13,9 @@ _url = "http://localhost:3000/add"
   add(contact){
     return this._http.post(this._url,contact)
   }
+  addImage(image){
+    return this._http.post("http://localhost:3000/images",image)
+  }
   list(){
     return this._http.get("http://localhost:3000/list")
   }
@@ -23,4 +26,6 @@ _url = "http://localhost:3000/add"
     return this._http.put("http://localhost:3000/contact/"+id,editContact,{
       headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     })
-}}
+    }
+  
+  }

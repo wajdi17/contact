@@ -11,6 +11,7 @@ export class CardComponent implements OnInit {
   @Input() lastName : any
   @Input() phone : any
   @Input() id : any
+  @Input() profilePic : any 
 
 
   constructor() { }

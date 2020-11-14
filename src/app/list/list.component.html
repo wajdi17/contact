@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light">
   <a class="navbar-brand font-weight-bold">Navbar</a>
   <form class="form-inline">
     <a class="nav-link" routerLink="/add">
@@ -15,6 +15,7 @@
       [lastName]="contact.lastname"
       [phone]="contact.phone"
       [id]="contact._id"
+      [profilePic]="picture(contact.img.data.data)"
     ></app-card>
   </div>
 </div>
