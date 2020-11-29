@@ -1,8 +1,9 @@
 .container {
     text-align: center;
 }
-h5{
+h1,p{
     margin-top: 5%;
+    color: #eeeeee;
 }
 img{
     border-radius:100% ;

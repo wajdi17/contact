@@ -1,14 +1,20 @@
 <div class="card m-5 p-5" style="width: 18rem">
-  <img [src]="profilePic" class="card-img-top" alt="..." width="18rem" height="100px" />
+  <img
+    [src]="profilePic"
+    class="card-img-top"
+    alt="profilePic"
+    width="18rem"
+    height="100px"
+  />
   <div class="card-body">
     <h5 class="card-title">{{ firstName }}</h5>
     <h5 class="card-title">{{ lastName }}</h5>
     <h5 class="card-title">{{ phone }}</h5>
-    <a [routerLink]="['/contact', id]" class="btn btn-primary">contact</a>
+    <a [routerLink]="['/contact', id]" class="btn btn-outline-light">contact</a>
     <a
       class="nav-link"
       [routerLink]="['/edit', id]"
-      class="btn btn-primary ml-1"
+      class="btn btn-outline-light ml-1"
     >
       edit
     </a>

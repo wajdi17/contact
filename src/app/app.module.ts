@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
+import { NgxSpinnerModule } from "ngx-spinner"
 
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
@@ -35,6 +36,7 @@ const routes : Routes = [
     FormsModule,
     HttpClientModule,
     FileUploadModule,
+    NgxSpinnerModule
 
   ],
   providers: [],

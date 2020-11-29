@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm} from '@angular/forms';//for convert html to an object
-import {ContactService} from '../contact.service'
+import { NgForm } from '@angular/forms';//for convert html to an object
+import { ContactService } from '../contact.service'
 
 @Component({
   selector: 'app-add',
@@ -8,44 +8,44 @@ import {ContactService} from '../contact.service'
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-   contact = {
-    firstName : "",
-    lastName : "",
-    email : "",
-    phone : null,
-    gender : "",
-    profilePicName :''
- 
-  }
-  image : any
+  contact = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: null,
+    gender: "",
+    profilePicName: ''
 
-  constructor(private _addService:ContactService) { }
+  }
+  image: any
+
+  constructor(private _addService: ContactService) { }
 
   ngOnInit(): void {
   }
 
- selectImage(event){
-   if(event.target.files.length>0){
-     const file = event.target.files[0];
-     this.image = file
-     this.contact.profilePicName = file.name
-     
-   }
- }
+  selectImage(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.image = file
+      this.contact.profilePicName = file.name
 
-onSubmit(form : NgForm){
-  //add profile pic
- const formData = new FormData()
- formData.append('file',this.image)
+    }
+  }
 
- this._addService.addImage(formData).subscribe()
+  onSubmit(form: NgForm) {
+    //add profile pic
+    const formData = new FormData()
+    formData.append('file', this.image)
 
-  this.contact.firstName =form.value.firstname
-  this.contact.lastName =form.value.lastname
-  this.contact.email = form.value.email
-  this.contact.phone = form.value.phone 
-  this.contact.gender= form.value.gender
+    formData.append('firstName', form.value.firstname);
+    formData.append('lastName', form.value.lastname);
+    formData.append('email', form.value.email);
+    formData.append('phone', form.value.phone);
+    formData.append('gender', form.value.gender);
 
- this._addService.add(this.contact).subscribe()
- 
-}}
+    this._addService.add(formData).subscribe()
+
+
+  }
+}

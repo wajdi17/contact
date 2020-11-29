@@ -1,14 +1,18 @@
 <div class="container pt-5">
   <form class="form-inline">
     <a class="nav-link" routerLink="/">
-      <button class="btn btn-outline-dark" type="button">back</button></a
+      <button class="btn btn-outline-light" type="button">back</button></a
     >
   </form>
-  <img [src]="profilePic" alt="pic" width="200px" height="200px">
-  <h5>{{ contact.firstname }}</h5>
-  <h5>{{ contact.lastname }}</h5>
-  <h5>{{ contact.email }}</h5>
-  <h5>{{ contact.phone }}</h5>
-  <h5>{{ contact.gender }}</h5>
-
+  <img [src]="profilePic" alt="pic" width="200px" height="200px" />
+  <h1>First name</h1>
+  <p>{{ contact.firstname }}</p>
+  <h1>Last name</h1>
+  <p>{{ contact.lastname }}</p>
+  <h1>Email</h1>
+  <p>{{ contact.email }}</p>
+  <h1>Phone</h1>
+  <p>{{ contact.phone }}</p>
+  <h1>Gender</h1>
+  <p>{{ contact.gender }}</p>
 </div>

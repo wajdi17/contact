@@ -1,6 +1,13 @@
-img {
-    border-radius:100%;
-}
+
 .card{
-    border-radius: 15%;
+    border-radius: 15% 0;
+    background-color: #393e46;
+    box-shadow: 4px 3px 8px 1px #393e46;
+  	-webkit-box-shadow: 4px 3px 8px 1px #393e46;
+}
+img{
+    border-radius: 15% 0 ;
+}
+h5{
+    color:#eeeeee;
 }
